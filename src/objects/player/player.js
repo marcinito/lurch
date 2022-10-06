@@ -21,14 +21,8 @@ playerImage.src=playerImageFile
 export class Player{
     constructor(){
 
-        if(menu.level===1){
          this.posX=386
          this.posY=623
-        }
-        if(menu.level===2){
-          this.posX=286
-          this.posY=203
-         }
         this.size=40.7
         this.color="blue"
         //IMAGE PLAYER
@@ -68,7 +62,7 @@ export class Player{
    this.ratePercentage=50// ratePercentage set value for "percent" in this case percent means 50
    this.whenPlayerLostLife="transparent"
    //quantity live
-   this.quantityLive=3
+   this.quantityLive=113
    //visual effect of treatment
    this.effect=0
 

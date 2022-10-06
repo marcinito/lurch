@@ -1,4 +1,11 @@
+import { menu } from "../../main"
+
 export const effectWhenPlayerPassedLevel=(transitionArray,can)=>{
+    let text="You passed level"
+ 
+    if(menu.level>5){
+        text="Congratulation you clean map , you get extra hp!"
+    }
     if(transitionArray.length>0){
         transitionArray.forEach((el)=>{
             el.draw(can)
@@ -9,9 +16,9 @@ export const effectWhenPlayerPassedLevel=(transitionArray,can)=>{
             gradient.addColorStop(0.3,"yellow")
             can.ctx.fillStyle=gradient
             can.ctx.font = "100px Impact";
-            can.ctx.fillText("You passed level",can.C_H/2,300)
+            can.ctx.fillText(text,can.C_H/2,300)
             can.ctx.fillStyle="black"
-            can.ctx.strokeText("You passed level",can.C_H/2,300)
+            can.ctx.strokeText(text,can.C_H/2,300)
         })
     }
 }

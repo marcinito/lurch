@@ -196,6 +196,7 @@ displayItemInDetail(allSlot,player)
             updateEqDashboard(el.dataset.item,player.backpack,"drop")
          }
         })
+        console.log(allSlot)
      }
 
 
@@ -245,12 +246,13 @@ displayItemInDetail(allSlot,player)
     window.addEventListener("mousemove",(e)=>{
         ex=e.x
         ey=e.y
-  
+
         point=setPositionTileOnMap(ex,ey)
-    
+        
         mouseDetectorMonster.posX=point.x-mouseDetectorMonster.size/2
         mouseDetectorMonster.posY=point.y-mouseDetectorMonster.size/2
         canIPutBlockInThisPlace(mouseDetectorMonster)
+
        
     })
 

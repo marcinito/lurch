@@ -25,7 +25,7 @@ export const destroWallWhenMonsterIsBlok=(creature,title)=>{
                       }
               })
        
-          },4000)
+          },2000)
       }
  
      

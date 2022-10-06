@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path=require("path")
 
 module.exports={
-    mode:"development",
+    mode:"production",
 entry:{
     main:{
       import:'./src/main.js',
@@ -86,5 +86,10 @@ devServer:{
     compress:true,
   
 
+},
+performance: {
+  hints: false,
+  maxEntrypointSize: 512000,
+  maxAssetSize: 512000
 }
 }

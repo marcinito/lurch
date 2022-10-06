@@ -23,7 +23,7 @@ clack.style.transform=`rotateZ(${click}deg)`
 },1000)
 
 amountLifeImg.src=heartImg
-export const breathingOfPlayer=()=>{
+export const breathingOfPlayer=(player)=>{
     amountLife.textContent=player.quantityLive
 
 

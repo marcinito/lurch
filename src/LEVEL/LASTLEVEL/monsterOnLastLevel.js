@@ -1,5 +1,6 @@
 import { createMonster } from "../../Functions/createMonster"
 import { Dragon } from "../../objects/MONSTER/dragon/dragon"
+import { Sheep } from "../../objects/MONSTER/sheep/sheep"
 import { Soldier } from "../../objects/MONSTER/soldier/soldier"
 import { Zombie } from "../../objects/MONSTER/zombie/zombie"
 
@@ -14,6 +15,7 @@ createMonster(Soldier,1,[{x:1050,y:500}]),
 createMonster(Soldier,1,[{x:1000,y:500}]),
 createMonster(Soldier,1,[{x:1100,y:500}]),
 createMonster(Soldier,1,[{x:1400,y:500}]),
+createMonster(Sheep,1,[{x:400,y:500}]),
     ]
     return array
 }

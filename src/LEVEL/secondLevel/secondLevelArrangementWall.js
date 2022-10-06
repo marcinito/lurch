@@ -7,6 +7,8 @@ import { plainWall } from "../../objects/WALL/plainWall/plainWall"
 import { woodenWall } from "../../objects/WALL/woodenWall/woodenWall"
 
 export const secondLevelArrangementWall=(player,can)=>{
+    player.posX=226
+    player.posY=630
     let array=[
         //start from bottom
         makeWall(solidWall,5,0,can.C_H-150,65,"red","horizontal"),,makeWall(brickWall,20,510,can.C_H-150,65,"red","horizontal"),

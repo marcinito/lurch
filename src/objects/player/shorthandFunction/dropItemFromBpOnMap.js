@@ -32,6 +32,7 @@ console.log("wykonuje sie")
    backpack.glock.bp.splice(0,1)
    countAmmoInGlockInPlayer(backpack,player.whatIsInHand,"glock")
    console.log(backpack.glock.ammo,"ammo")
+   console.log(backpack.glock.bp[0])
 }
  if(directionMove==="right"){
 

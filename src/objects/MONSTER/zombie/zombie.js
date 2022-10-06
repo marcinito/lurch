@@ -44,7 +44,7 @@ export class Zombie{
         this.size=this.naturalSize
         this.color="darkgreen"
         this.name="zombie"
-        this.naturalSpeed=1+menu.level/2
+        this.naturalSpeed=1+menu.level/4
         this.speed=1
         //detectJump
         this.dposX=this.posX

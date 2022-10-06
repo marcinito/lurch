@@ -17,7 +17,7 @@ import { countEnduranceInAxe } from './shorthandFunction/countEnduranceInAxe'
 import brickWall from '../WALL/brickWall/images/brickWall100.png'
 import { displayItemInDetail } from './shorthandFunction/displayItemInDetail'
 //player take item from map and put it in backpack in first free place
-
+let take
 export const playerTakeItemFromMap=(player,itemsOnMap)=>{
     itemsOnMap.forEach((itemsFromMap,indexItemsFromMap,itemsOnMapArr)=>{
   
@@ -344,14 +344,23 @@ export const playerTakeItemFromMap=(player,itemsOnMap)=>{
                 //NO COLLISION
             }
             else{
-             let score= allSlot.every((el)=>{return el.dataset.empty==="false"})
+          
+          
+           allSlot.forEach((el,i,arr)=>{
+            console.log(el)
+            if(el.dataset.item===itemsFromMap.name||el.dataset.empty==="true"){
            
-            if(score===false){
+              take=true
+            }
+           })
 
-        
+        if(take===true){
+
+    
               if(itemsFromMap.name.slice(-4)==="Wall"){
              
                itemsFromMap.layOnMap=false
+               take=false
                return
                
               }
@@ -378,48 +387,57 @@ export const playerTakeItemFromMap=(player,itemsOnMap)=>{
               if(itemsFromMap.name==="axe"){
                 
                 itemsFromMap.layOnMap=false
+                take=false
                 return
               }
               if(itemsFromMap.name==="glock"){
                 
                 itemsFromMap.layOnMap=false
+                take=false
                
                 return
               }
               if(itemsFromMap.name==="dynamite"){
                 
                 itemsFromMap.layOnMap=false
+                take=false
                 return
               }
        
               if(itemsFromMap.name==="hpPotion"){
           
                 itemsFromMap.layOnMap=false
+                take=false
                 return
               }
               if(itemsFromMap.name==="jumpFluid"){
                 
                 itemsFromMap.layOnMap=false
+                take=false
                 return
               }
               if(itemsFromMap.name==="meat"){
                 
                 itemsFromMap.layOnMap=false
+                take=false
                 return
               }
               if(itemsFromMap.name==="machineGun"){
                 
                 itemsFromMap.layOnMap=false
+                take=false
                 return
               }
               if(itemsFromMap.name==="helperRuna"){
                 
                 itemsFromMap.layOnMap=false
+                take=false
                 return
               }
              
-            }
+            
           }
+        }
     })
 
 }

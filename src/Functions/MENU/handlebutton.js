@@ -10,6 +10,7 @@ const smallTab=[...document.querySelectorAll(".tab")]
 const itemsTable=document.querySelector(".items")
 const story=document.querySelector(".story")
 const instruction=document.querySelector(".instruction")
+const logoGame=document.querySelector(".logoGame")
 
 export const handleButton=(menu)=>{
 
@@ -41,6 +42,7 @@ smallTab.forEach((tab,i,arr)=>{
     smallTab.forEach((el)=>{
         el.style.backgroundColor="gray"
         el.style.borderStyle="none"
+        logoGame.style.transform=`scale(0)`
     })
      
         if(tab.textContent==="items"){

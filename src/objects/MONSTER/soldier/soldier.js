@@ -38,7 +38,7 @@ export class Soldier{
      
         this.name="soldier"
         this.color="orange"
-        this.naturalSpeed=1.2+menu.level/3
+        this.naturalSpeed=1.2+menu.level/4
         this.speed=0
         this.strenghtGravity=4
         this.strenghtAttack=0.3

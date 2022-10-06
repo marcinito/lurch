@@ -1,5 +1,5 @@
 import { makeWall } from "../../Functions/makeWall"
-import { can } from "../../main"
+import { can, player } from "../../main"
 import { brickWall } from "../../objects/WALL/brickWall/brickWall"
 import { goldWall } from "../../objects/WALL/goldWall/goldWall"
 import { magmaWall } from "../../objects/WALL/magmaWall/magmaWall"
@@ -8,6 +8,8 @@ import { solidWall } from "../../objects/WALL/solidWall/solidWall"
 import { woodenWall } from "../../objects/WALL/woodenWall/woodenWall"
 
 export const lastLevelArrangementWall=()=>{
+    player.posX=400
+    player.posY=600
     let array=[
 makeWall(plainWall,30,0,0,65,"red","horizontal"),
 makeWall(plainWall,30,0,65,65,"red","horizontal"),

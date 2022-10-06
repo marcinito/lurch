@@ -1,5 +1,6 @@
 
 import { random } from "../../../Functions/shorthandFunction/random"
+import { menu } from "../../../main"
 import { detectJumpPosition } from "../FUNCTION/detectJumpPosition"
 import { checkIfMonsterCanGoFurther } from "../FUNCTION/detectVerge/checkIfCreatureCanGoFurther"
 import { detectBlokJump } from "../objects/detectBlokJump"
@@ -27,7 +28,7 @@ constructor(posX,posY){
     this.color="aquamarine"
     
     this.name="sheep"
-    this.naturalSpeed=2
+    this.naturalSpeed=2+menu.level/6
     this.speed=this.naturalSpeed
   
     this.strenghtGravity=3

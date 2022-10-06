@@ -69,8 +69,12 @@ import { changeWay } from './objects/MONSTER/FUNCTION/changeWay'
 import { monsterOnFourLevel } from './LEVEL/FOUR-LEVEL/monsterOnFourLevel'
 import { lastLevelArrangementWall } from './LEVEL/LASTLEVEL/lastLevelArrangementWall'
 import { monsterOnLastLevel } from './LEVEL/LASTLEVEL/monsterOnLastLevel'
-import { itemsOnlastLevel } from './LEVEL/LASTLEVEL/itemsOnLastLevel'
+import { itemsOnLastLevel, itemsOnlastLevel } from './LEVEL/LASTLEVEL/itemsOnLastLevel'
 import { effectWhenPlayerPassedLevel } from './LEVEL/CHANGE-LEVEl/effectWhenPlayerPassedLevel'
+import { itemsOnFourLevel } from './LEVEL/FOUR-LEVEL/itemsOnFourLevel'
+import { freeModeArrangementWall } from './LEVEL/FREEMODE/freeModeArrangementWall'
+import { monsterOnFreeMode } from './LEVEL/FREEMODE/monsterOnFreeMode'
+import { itemsInFreeMode } from './LEVEL/FREEMODE/itemsInFreeMode'
 
 const body=document.querySelector("body")
 
@@ -100,15 +104,17 @@ export let changeLevel=()=>{
                 MONSTER=monsterInSecondLevel()
                 itemsOnMap=itemsOnSecondLvl()
                 cleanMap(player)
-                
+                console.log("ile razy sie wykonuje")
+                player.hpTotal+=50
             }
             if(menu.level===3){
               
                 console.log("3level")
                         WALL=thirdLevelArrangement(player,can)
-                        MONSTER=monsterInSecondLevel()
+                        MONSTER=monsterOnThirdLevel()
                         itemsOnMap=itemsOnThirdLevel()
                         cleanMap(player)
+                        player.hpTotal+=50
                       
                     }
                     
@@ -116,15 +122,25 @@ export let changeLevel=()=>{
                         console.log("4level")
                         WALL=fourLevelArrangementWall(player,can)
                         MONSTER=monsterOnFourLevel()
-                        itemsOnMap=itemsOnFourLvl()
+                        itemsOnMap=itemsOnFourLevel()
+                        
                         cleanMap(player)
+                        player.hpTotal+=50
                       
                     }
                     if(menu.level===5){
                         WALL=lastLevelArrangementWall()
                         MONSTER=monsterOnLastLevel()
-                        itemsOnMap=itemsOnlastLevel()
+                        itemsOnMap=itemsOnLastLevel()
                         cleanMap(player)
+                        player.hpTotal+=50
+                    }
+                    if(menu.level===6){
+                        WALL=freeModeArrangementWall()
+                        MONSTER=monsterOnFreeMode()
+                        itemsOnMap=itemsInFreeMode()
+                        cleanMap(player)
+                        player.hpTotal+=50
                     }
 }
 
@@ -133,7 +149,7 @@ export let NPC=[]
 export let WALL=firstLevelArrangementWall(player,can)
 export let MONSTER=monsterOnFirstLevel()
 export let itemsOnMap=itemsOnFirstLevel()
-console.log(MONSTER)
+
 movementPlayer(player,itemsOnMap)
 
 

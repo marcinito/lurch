@@ -10,7 +10,9 @@ import { woodenWall } from "../../objects/WALL/woodenWall/woodenWall"
 
 
 export const thirdLevelArrangement=(player,can)=>{
-   let tablica=[
+player.posX=123
+player.posY=90
+   let array=[
    makeWall(solidWall,30,0,0,65,"red","horizontal"),
    makeWall(plainWall,10,200,130,65,"red","horizontal"),
    makeWall(goldWall,5,0,195,65,"red","horizontal"),
@@ -41,5 +43,5 @@ export const thirdLevelArrangement=(player,can)=>{
 
    player.blockToBuild
    ]
-   return tablica
+   return array
 }

@@ -12,7 +12,7 @@ export const zombieAttackPlayer=(player,arrZombie)=>{
     
        if(hypotenuse<70&&zombie.directionMove==="right"){
         zombie.speed=0
-        console.log("r")
+      
        
             player.hp-=zombie.strenghtAttack
             player.percentageHp-=handleHp(zombie.strenghtAttack,player)
@@ -23,7 +23,7 @@ export const zombieAttackPlayer=(player,arrZombie)=>{
        }
        else if(hypotenuse<40&&zombie.directionMove==="left"){
         zombie.speed=0
-        console.log("l")
+     
         player.hp-=zombie.strenghtAttack
         player.percentageHp-=handleHp(zombie.strenghtAttack,player)
        
