@@ -14,8 +14,8 @@ export const whenDragonTouchPlayer=(player,dragonArray)=>{
 
   }else{
 if(dragon.directionMove!=="up"){
-  dragon.directionMove=random(dragon.directionArr)
-  dragon.posY-=100
+ 
+
   player.hp-=dragon.attack.whenTouchPlayer
   player.percentageHp-=handleHp(dragon.attack.whenTouchPlayer,player)
 }

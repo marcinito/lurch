@@ -4,6 +4,7 @@ export const PLAYERGRAVITY=(player,WALL,can)=>{
 
 //STRENGHT GRAVITY
 player.posY+=player.strenghtGravity
+player.doFall=true
 
 
 WALL.forEach((pAW,pAI,wallArray)=>{
@@ -31,6 +32,7 @@ WALL.forEach((pAW,pAI,wallArray)=>{
              title.color="white"
              player.up=true
              player.counterJump=0
+             player.doFall=false
             }
             //Move Left
             if(player.posX<title.posX+title.size&&player.posX>title.posX+title.size/2&&player.directionMove==="left"
@@ -38,7 +40,7 @@ WALL.forEach((pAW,pAI,wallArray)=>{
               let deepCollision=title.posX+title.size-player.posX
               player.up=false
               player.posX+=deepCollision+3
-              console.log("move left player")
+              
              
             }
             //move right
@@ -47,7 +49,7 @@ WALL.forEach((pAW,pAI,wallArray)=>{
               let deepCollision=player.posX+player.size-title.posX
               player.posX-=deepCollision+3
               player.up=false
-              console.log("move right player")
+             
             }
           
       //Block jump when meet down horizontal wall

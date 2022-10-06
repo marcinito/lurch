@@ -40,6 +40,9 @@ export class Player{
         this.directionJump="left"
         this.speed=19.57
 
+        this.doFall=false
+        this.doPlayerRun=0
+
         //Direction
         this.up=true
         this.down=true
@@ -62,11 +65,11 @@ export class Player{
    this.ratePercentage=50// ratePercentage set value for "percent" in this case percent means 50
    this.whenPlayerLostLife="transparent"
    //quantity live
-   this.quantityLive=3
+   this.quantityLive=31
    //visual effect of treatment
    this.effect=0
 
-
+     
      //backpack
      this.whatIsInHand=undefined
      this.backpack={
@@ -74,8 +77,8 @@ export class Player{
       axe:{amount:0,itemInBp:false,ammo:"∞",bp:[],totalEndurance:0},
       glock:{amount:0,itemInBp:false,bp:[],ammo:0,flag:true},
       machineGun:{amount:0,itemInBp:false,bp:[],ammo:0,flag:true},
-      dynamite:{amount:0,itemInBp:false,ammo:"",},
-      solidWall:{amount:0,itemInBp:false,ammo:0,},
+      dynamite:{amount:1110,itemInBp:false,ammo:"",},
+      solidWall:{amount:324230,itemInBp:false,ammo:0,},
       plainWall:{amount:0,itemInBp:false,ammo:0,},
       brickWall:{amount:0,itemInBp:false,ammo:0,},
       magmaWall:{amount:0,itemInBp:false,ammo:0,},

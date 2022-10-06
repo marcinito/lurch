@@ -347,7 +347,7 @@ export const playerTakeItemFromMap=(player,itemsOnMap)=>{
           
           
            allSlot.forEach((el,i,arr)=>{
-            console.log(el)
+           
             if(el.dataset.item===itemsFromMap.name||el.dataset.empty==="true"){
            
               take=true

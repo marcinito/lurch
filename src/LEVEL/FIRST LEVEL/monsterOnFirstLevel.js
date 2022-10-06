@@ -9,7 +9,7 @@ import { Zombie } from "../../objects/MONSTER/zombie/zombie"
 export const monsterOnFirstLevel=()=>{
     let array=[
 
-    createMonster(Sheep,1,[{x:335,y:467}]),
+    // createMonster(Sheep,1,[{x:335,y:467}]),
     // createMonster(Sheep,1,[{x:335,y:67}]),
     // createMonster(Sheep,1,[{x:1135,y:467}]),
     // createMonster(Zombie,1,[{x:1215,y:467}]),

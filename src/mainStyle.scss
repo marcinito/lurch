@@ -3,9 +3,12 @@
         margin:0;
         padding:0;
         box-sizing: border-box;
+        font-size: calc(15px + 0.390625vw);
       
         
     }
+   
+
     body{
       
      
@@ -273,7 +276,7 @@
             height:20%;
             border:1px solid red;
             background-color: orange;
-            top:-440%;
+            top:-420%;
             border-radius:40%;
             font-weight: bold;
             font-size:7px;
@@ -281,7 +284,7 @@
            
             text-align: center;
            
-            right:-111%;
+            right:-121%;
             opacity:0.6;
             overflow:hidden;
         }
@@ -363,7 +366,7 @@
             height:78%;
             width:50%;
             border:18px solid orange;
-            background-color: darkblue;
+            background-color:red;
           
             position:absolute;
             left:55%;
@@ -548,7 +551,7 @@
             /// styles about first row in table "movement"
             .thMovement{
                 background-color: #6495ED;
-                font-size:100%;
+                font-size:150%;
              
                 img{
                     width:50%;
@@ -558,7 +561,7 @@
                 background-color: #6495ED;
                 width: 50%;
                 height:50%;
-                font-size:15px;
+                font-size:19px;
                 text-align: center;
                 padding-top: 2px;
                 color:darkblue;
@@ -579,7 +582,7 @@
                             background-color: gold;
                             font-weight:bold;
                             -webkit-text-stroke:0.2px darkblue;
-                            font-size:20px;    
+                            font-size:25px;    
                         }
                       
                     }
@@ -589,7 +592,7 @@
             .thAttack{
                 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
                 background-color: #5F9EA0;
-                font-size:200%;
+                font-size:150%;
                 img{
                     width:70%;
                 }
@@ -599,7 +602,7 @@
                 .secondTable{
                  
                     color:darken(white,20%);
-                    font-size:14px;
+                    font-size:19px;
                     display:flex;
                     justify-content: center;
                     th{

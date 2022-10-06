@@ -23,58 +23,34 @@ export let point
 
 export const movementPlayer=(player,itemsOnMap)=>{
    
+    window.addEventListener("keyup",(e)=>{
+        if(e.keyCode===37){
+               
+            player.doPlayerRun=0
+         
+            
+    }
+    if(e.keyCode===39){
+        player.doPlayerRun=0
+     
+}
+
+    })
     window.addEventListener("keydown",(e)=>{
        
-//        //monster jump
-//        if(e.keyCode===87){
-               
-       
-//         MONSTER.forEach((particular)=>{
-//             particular.forEach((monster)=>{
-//                 if(monster.name==="zombie"){
-//                     monster.posY-=20
-//                 }
-//             })
-//         })
-  
 
-// }
-//     //monster right
-//     if(e.keyCode===68){
-               
-       
-//         MONSTER.forEach((particular)=>{
-//             particular.forEach((monster)=>{
-//                 if(monster.name==="zombie"){
-//                     monster.directionMove="right"
-//                     monster.posX+=20
-//                 }
-//             })
-//         })
-        
-// }
-//       //Monster left
-//       if(e.keyCode===65){
-               
-          
-//         MONSTER.forEach((particular)=>{
-//             particular.forEach((monster)=>{
-//                 if(monster.name==="zombie"){
-//                     monster.directionMove="left"
-//                     monster.posX-=20
-//                 }
-//             })
-//         })
-        
-// }
         if(e.keyCode===37){
+               player.doPlayerRun++
+               console.log(player.doPlayerRun)
                
                 player.moveLeft()
              
                 
         }
         if(e.keyCode===39){
-            player.moveRight()
+            player.doPlayerRun++
+            console.log(player.doPlayerRun)
+                player.moveRight()
          
     }
 
@@ -85,10 +61,8 @@ if(e.keyCode===32){
     player.fire()
     
 }
-if(e.keyCode===81){
-  
 
-}
+
 
     })
 

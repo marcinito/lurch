@@ -54,5 +54,18 @@ export const breathingOfPlayer=(player)=>{
     else{
         player.extraJump=false
     }
-
+//player running
+if(player.doPlayerRun<7){
+    player.speed=19.8
+}else if(player.doPlayerRun>7&&player.doPlayerRun<12){
+    player.speed=14.1
+}
+else if(player.doPlayerRun>12){
+    player.speed=4
+}
+if(player.doFall===true){
+    setTimeout(()=>{
+player.speed=4
+    },500)
+}
 }

@@ -4,7 +4,7 @@ import { solidWall } from "../../objects/WALL/solidWall/solidWall"
 
 export const freeModeArrangementWall=()=>{
     player.posX=800
-    player.posY=500
+    player.posY=300
     let array=[
         makeWall(solidWall,25,0,500,65,"blue","horizontal"),
         makeWall(solidWall,25,0,565,65,"blue","horizontal"),
