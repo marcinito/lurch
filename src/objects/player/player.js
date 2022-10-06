@@ -47,7 +47,7 @@ export class Player{
         this.right=true
  
         //JUMP HANDLE
-   this.powerJump=50//-strenght of jump how many player move to up when jump
+   this.powerJump=20//-strenght of jump how many player move to up when jump
    this.counterJump=0
    this.stop=false//-is becoming active when player meet obstacle when jump its blok his jumping
     this.counterExtraJump=0 //-is serve as timer how many second player can jump higher than usually
@@ -70,12 +70,12 @@ export class Player{
      //backpack
      this.whatIsInHand=undefined
      this.backpack={
-      money:{amount:20,itemInBp:false},
+      money:{amount:0,itemInBp:false},
       axe:{amount:0,itemInBp:false,ammo:"∞",bp:[],totalEndurance:0},
       glock:{amount:0,itemInBp:false,bp:[],ammo:0,flag:true},
       machineGun:{amount:0,itemInBp:false,bp:[],ammo:0,flag:true},
-      dynamite:{amount:453540,itemInBp:false,ammo:"",},
-      solidWall:{amount:333330,itemInBp:false,ammo:0,},
+      dynamite:{amount:0,itemInBp:false,ammo:"",},
+      solidWall:{amount:0,itemInBp:false,ammo:0,},
       plainWall:{amount:0,itemInBp:false,ammo:0,},
       brickWall:{amount:0,itemInBp:false,ammo:0,},
       magmaWall:{amount:0,itemInBp:false,ammo:0,},
