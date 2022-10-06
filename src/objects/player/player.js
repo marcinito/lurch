@@ -62,7 +62,7 @@ export class Player{
    this.ratePercentage=50// ratePercentage set value for "percent" in this case percent means 50
    this.whenPlayerLostLife="transparent"
    //quantity live
-   this.quantityLive=113
+   this.quantityLive=3
    //visual effect of treatment
    this.effect=0
 
