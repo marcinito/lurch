@@ -302,7 +302,7 @@ effectWhenPlayerPassedLevel(transitionArray,can)
    }
 
    if(menu.playGame==="game-over"){
-    window.location="https://marcinito.github.io/gameover.html"
+    window.location="/gameover.html"
    }
 
     requestAnimationFrame(runApp)
