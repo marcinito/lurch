@@ -8,15 +8,14 @@ const path=require("path")
 module.exports={
     mode:"production",
 entry:{
-    main:{
-      import:'./src/main.js',
+    main:'./src/main.js',
+    gameover:'./src/gameover.js',  
       
-    },
+    
 
-    gameover:{
-      import:'./src/gameover.js',
+    
 
-    }
+    
 },
 output:{
     path:path.resolve(__dirname,"dist"),

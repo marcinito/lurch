@@ -51,7 +51,7 @@ export class Player{
         this.right=true
  
         //JUMP HANDLE
-   this.powerJump=20//-strenght of jump how many player move to up when jump
+   this.powerJump=60//-strenght of jump how many player move to up when jump
    this.counterJump=0
    this.stopJump=false//-is becoming active when player meet obstacle when jump its blok his jumping
     this.counterExtraJump=0 //-is serve as timer how many second player can jump higher than usually
@@ -101,8 +101,7 @@ export class Player{
        this.bulletGlockArray=[]
        this.dynamitsArray=[]
        this.axeArray=[]
-       
-       //switch for checking what a position is lowest tile on map
+
    
        this.deadEffect=false
     }
