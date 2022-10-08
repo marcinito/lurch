@@ -315,7 +315,8 @@ if(this.directionMove==="left"){
     //detect blok jump
     this.detectBlokJump.posX=this.posX+10
     this.detectBlokJump.posY=this.posY
-    this.detectBlokJump.size=this.size-20
+    this.detectBlokJump.sizeX=this.size-20
+    this.detectBlokJump.sizeY=this.size/6
 
         this.detectBlokJump.draw(can)
 

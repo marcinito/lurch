@@ -1,5 +1,5 @@
 
-import zombieSprite from './zombie.png'
+
 import zombieSprite2 from './zombieSprites.png'
 
 
@@ -18,8 +18,7 @@ import { menu } from '../../../main'
 
 
 
-let zombieImg=new Image(100,100)
-zombieImg.src=zombieSprite
+
 let zombieImg2=new Image(100,100)
 zombieImg2.src=zombieSprite2
 let zombieMove=0
@@ -247,7 +246,8 @@ if(this.directionMove==="left"){
     //detect blok jump
     this.detectBlokJump.posX=this.posX+10
     this.detectBlokJump.posY=this.posY-10
-    this.detectBlokJump.size=this.size-20
+    this.detectBlokJump.sizeX=this.size-20
+    this.detectBlokJump.sizeY=this.size/6
 
         this.detectBlokJump.draw(can)
 }
