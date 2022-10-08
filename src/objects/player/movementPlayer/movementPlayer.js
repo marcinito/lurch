@@ -39,17 +39,17 @@ export const movementPlayer=(player,itemsOnMap)=>{
     window.addEventListener("keydown",(e)=>{
        
 
-        if(e.keyCode===37){
+        if(e.keyCode===37&&player.detectBlokJump.blok===false){
                player.doPlayerRun++
-               console.log(player.doPlayerRun)
+           
                
                 player.moveLeft()
              
                 
         }
-        if(e.keyCode===39){
+        if(e.keyCode===39&&player.detectBlokJump.blok===false){
             player.doPlayerRun++
-            console.log(player.doPlayerRun)
+           
                 player.moveRight()
          
     }
@@ -72,6 +72,7 @@ if(e.keyCode===32){
         //JUMP
         if(e.keyCode===38){
             if(player.counterJump<1){
+                
                 player.moveUp()
                 player.counterJump++
             }

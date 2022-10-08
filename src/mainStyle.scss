@@ -1,9 +1,13 @@
 
+
+   html{
+        font-size: calc(15px + 0.390625vw);
+    }
     *{
         margin:0;
         padding:0;
         box-sizing: border-box;
-        font-size: calc(15px + 0.390625vw);
+        
       
         
     }
@@ -25,15 +29,40 @@
        
         
     }
-    
+    .pause{
+        position:absolute;
+        z-index:-110;
+        width:4%;
+        height:3%;
+        border:1px solid red;
+        background-color: orange;
+      
+        border-radius:40%;
+        font-weight: bold;
+        font-size:7px;
+        top:5%;
+        right:2%;
+       opacity:0;
+        text-align: center;
+       
+      
+        
+        overflow:hidden;
+    }
+    .pause:hover{
+        opacity:1;
+        border:1px groove lawngreen;
+        color:white;
+        -webkit-text-stroke:0.3px darkblue;
+    }
     #canvas{
         cursor:none;
         border:1px solid black;
-        
+       
         position:absolute;
-        
+       
         width:100%;
-        height:101%;
+        height:100%;
         
        
         
@@ -269,31 +298,7 @@
         }
     
         }
-        .pause{
-            position:absolute;
-            z-index:110;
-            width:30%;
-            height:20%;
-            border:1px solid red;
-            background-color: orange;
-            top:-420%;
-            border-radius:40%;
-            font-weight: bold;
-            font-size:7px;
-       
-           
-            text-align: center;
-           
-            right:-121%;
-            opacity:0.6;
-            overflow:hidden;
-        }
-        .pause:hover{
-            opacity:1;
-            border:1px groove lawngreen;
-            color:white;
-            -webkit-text-stroke:0.3px darkblue;
-        }
+  
         .lifeSpan{
             position:absolute;
             bottom:2%;
@@ -337,7 +342,9 @@
         z-index:10;
         left:50%;
         background-image: url("./stylesImage//smok2.png");
+        filter: grayscale(20%);
         transform:translate(-50%,0%);
+        
      
         background-size: 100%;
       
@@ -366,13 +373,13 @@
             height:78%;
             width:50%;
             border:18px solid orange;
-            background-color:yellow;
+            background-color:darken(darkblue,1%);
           
             position:absolute;
             left:55%;
             top:20%;
             transform:translateX(-50%);
-          
+        
             border-image-slice:15 15 15 15;
     border-image-width:10px 10px 10px 0px;
     border-image-outset:10px;
@@ -411,7 +418,7 @@
       
         display:flex;
         width:95%;
-        background-color: red;
+        background-color: darkorange;
        
         text-align: center;
         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -427,9 +434,12 @@
       .tab{
         border:1px solid black;
         width:33.3%;
-        font-size:22px;
+     
         outline-style:outset ;
         outline-color: black;
+      }
+      .tab:hover{
+        filter:brightness(150%);
       }
        }
     
@@ -452,6 +462,7 @@
           font-size: 22px;
           top:10%;
           padding-bottom: 2%;
+      
        
           
           
@@ -486,42 +497,43 @@
                 }
                 .axe{
                     background-color:lighten(skyblue,10%);
-                    -webkit-text-stroke:0.1px red;
+                    
                    
                 }
                 .glock{
                     background-color:lighten(pink,10%);
-                    -webkit-text-stroke:0.1px blue;
+                    
                 }
                 .hpPotion{
                     background-color:darken(bisque,10%);
-                    -webkit-text-stroke:0.1px brown;
+                  
                 }
                 .helper{
                     background-color:lighten(plum,10%);
-                    -webkit-text-stroke:0.1px yellow;
+                  
                 }
                 .jumpFluid{
                     background-color:lighten(salmon,10%);
-                    -webkit-text-stroke:0.1px orange;
+                   
                 }
                 .meat{
                     background-color:lighten(khaki,10%);
-                    -webkit-text-stroke:0.1px black;
+                   
                 }
                 .machineGun{
                     background-color:lighten(navajowhite,10%);
-                    -webkit-text-stroke:0.1px red;
+                  
                 }
                 .dynamite{
                     background-color: bisque;
-                    -webkit-text-stroke:0.1px plum;
+                   
                 }
                 .desecribe{
     width: 70%;
                 }
             }
         }
+
         .story{
             position:relative;
             top:10%;
@@ -551,7 +563,7 @@
             /// styles about first row in table "movement"
             .thMovement{
                 background-color: #6495ED;
-                font-size:150%;
+                
              
                 img{
                     width:50%;
@@ -561,7 +573,7 @@
                 background-color: #6495ED;
                 width: 50%;
                 height:50%;
-                font-size:19px;
+              
                 text-align: center;
                 padding-top: 2px;
                 color:darkblue;
@@ -581,8 +593,8 @@
                         td{
                             background-color: gold;
                             font-weight:bold;
-                            -webkit-text-stroke:0.2px darkblue;
-                            font-size:25px;    
+                            
+                             
                         }
                       
                     }
@@ -592,7 +604,7 @@
             .thAttack{
                 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
                 background-color: #5F9EA0;
-                font-size:150%;
+               
                 img{
                     width:70%;
                 }
@@ -602,7 +614,7 @@
                 .secondTable{
                  
                     color:darken(white,20%);
-                    font-size:19px;
+                   
                     display:flex;
                     justify-content: center;
                     th{
@@ -611,9 +623,9 @@
                     td{
                         background-color: #2F4F4F;
                         color:red;
-                        font-size:20px;
+                       
                         font-weight:bold;
-                        -webkit-text-stroke:0.2px white;
+                        
                     }
                 }
             }
@@ -630,9 +642,9 @@
                         background-color: darken(orange,10%);
                     }
                     td{
-                        font-size:25px;
+                        
                         font-weight:bold;
-                        -webkit-text-stroke:0.5px gold;
+                    
                         background-color: darken(orange,10%);
                     }
                 }
@@ -664,15 +676,15 @@
                     color:orange;
                     text-align: center;
                     text-indent: 5px;
-                    -webkit-text-stroke:0.4px gold;
+                   
                 }
                 .spanSecondStep{
                     color:magenta;
-                    -webkit-text-stroke:0.4px plum;
+                  
                 }
                 .spaceImg{
-                    width:100px;
-                    height:20px;
+                    width:50%;
+                    height:50px;
                     background-color:white;
                     position: relative;
                     left:50%;
@@ -741,7 +753,7 @@
                 z-index:10;
                 width:80%;
                 height:20%;
-                font-size:120%;
+                font-size:4vh;
                 font-family: 'Bahianita', cursive;
                 margin-top:2%;
                 box-shadow: inset 2px 2px 30px 4px darkblue;
@@ -753,7 +765,7 @@
                
                font-size:100%;
                 color:red;
-                -webkit-text-stroke:1px darkblue;
+                
             }
         }
     

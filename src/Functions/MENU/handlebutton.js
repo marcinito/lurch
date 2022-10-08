@@ -20,6 +20,10 @@ export const handleButton=(menu)=>{
         mainMenu.style.opacity=0
         mainMenu.style.zIndex=-100
         menu.click=1
+        pause.style.opacity=1
+        pause.style.zIndex=110
+
+        
      
     })
     pause.addEventListener("click",()=>{
@@ -29,6 +33,8 @@ export const handleButton=(menu)=>{
         mainMenu.style.zIndex=100
         menu.click++
         startGame.textContent="Return"
+        pause.style.opacity=0
+        pause.style.zIndex=-110
  
         greetings()
         

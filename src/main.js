@@ -97,15 +97,17 @@ export let transitionArray=[]
 export let changeLevel=()=>{
     //change level work in this way that when monster is killed function count all monster on map when
     //number is 0 its will change level
+    let amountAddedLifeAfterLevelAdvance=30
     console.log(menu.level)
     if(menu.level===2){
-     console.log("2level")
+     
                 WALL=secondLevelArrangementWall(player,can)
                 MONSTER=monsterInSecondLevel()
                 itemsOnMap=itemsOnSecondLvl()
                 cleanMap(player)
                 console.log("ile razy sie wykonuje")
-                player.hpTotal+=50
+                player.hpTotal+=amountAddedLifeAfterLevelAdvance
+                player.quantityLive+=1
             }
             if(menu.level===3){
               
@@ -114,7 +116,8 @@ export let changeLevel=()=>{
                         MONSTER=monsterOnThirdLevel()
                         itemsOnMap=itemsOnThirdLevel()
                         cleanMap(player)
-                        player.hpTotal+=50
+                        player.hpTotal+=amountAddedLifeAfterLevelAdvance
+                        player.quantityLive+=1
                       
                     }
                     
@@ -125,7 +128,8 @@ export let changeLevel=()=>{
                         itemsOnMap=itemsOnFourLevel()
                         
                         cleanMap(player)
-                        player.hpTotal+=50
+                        player.hpTotal+=amountAddedLifeAfterLevelAdvance
+                        player.quantityLive+=1
                       
                     }
                     if(menu.level===5){
@@ -133,14 +137,16 @@ export let changeLevel=()=>{
                         MONSTER=monsterOnLastLevel()
                         itemsOnMap=itemsOnLastLevel()
                         cleanMap(player)
-                        player.hpTotal+=50
+                        player.hpTotal+=amountAddedLifeAfterLevelAdvance
+                        player.quantityLive+=1
                     }
                     if(menu.level===6){
                         WALL=freeModeArrangementWall()
                         MONSTER=monsterOnFreeMode()
                         itemsOnMap=itemsInFreeMode()
                         cleanMap(player)
-                        player.hpTotal+=50
+                        player.hpTotal+=amountAddedLifeAfterLevelAdvance
+                        player.quantityLive+=1
                     }
 }
 
@@ -153,8 +159,7 @@ export let itemsOnMap=itemsOnFirstLevel()
 movementPlayer(player,itemsOnMap)
 
 
-const tlo=new Image(100,100)
-tlo.src=imagess
+
 const backgroundImg=new background()
  const runApp=()=>{ 
 

@@ -9,7 +9,7 @@ import { woodenWall } from "../../objects/WALL/woodenWall/woodenWall"
 
 export const firstLevelArrangementWall=(player,can)=>{
     player.posX=400
-    player.posY=500
+    player.posY=600
     let tablica=
 [
 //COUNT FROM BOTTOM , WALL ON THE SAME LVL IN ONE LINE

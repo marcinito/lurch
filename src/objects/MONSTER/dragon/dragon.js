@@ -26,7 +26,7 @@ export class Dragon{
         this.type="dynamic"
         this.id="monsterFly"
         this.name="dragon"
-        this.attack={wall:4,player:30,whenTouchPlayer:60}
+        this.attack={wall:4,player:50,whenTouchPlayer:4,whenTouchNpc:2}
       
         
         this.image=dragon

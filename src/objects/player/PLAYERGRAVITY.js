@@ -10,7 +10,7 @@ player.doFall=true
 WALL.forEach((pAW,pAI,wallArray)=>{
     //pE-particular Element wall title
   pAW.forEach((title,pI,pArr)=>{
-
+    player.detectBlokJump.canMonsterJump(title)
     //CONTACT PLAYER WITH TITLE FROM WALL
     if(player.posX+player.size<title.posX || player.posX>title.posX+title.size ||
          player.posY+player.size<title.posY || player.posY>title.posY+title.size){
@@ -23,7 +23,7 @@ WALL.forEach((pAW,pAI,wallArray)=>{
             
       //When player touch horizontal element on top
    
-            if(player.posY+player.size>title.posY-1 && title.posY>player.posY&&player.posY+player.size<title.posY+title.size/2){
+            if(player.posY+player.size>title.posY-1 && title.posY>player.posY&&player.posY+player.size<title.posY+3){
               //Gravity dont work when player stand on block
    
             let deepCollision=player.posY+player.size-title.posY
@@ -41,7 +41,7 @@ WALL.forEach((pAW,pAI,wallArray)=>{
               player.up=false
               player.posX+=deepCollision+3
               
-             
+             console.log("LEFT")
             }
             //move right
             if(player.posX+player.size>title.posX&&player.posX+player.size<title.posX+title.size/2&&player.directionMove==="right"&&
@@ -49,19 +49,17 @@ WALL.forEach((pAW,pAI,wallArray)=>{
               let deepCollision=player.posX+player.size-title.posX
               player.posX-=deepCollision+3
               player.up=false
-             
+              console.log("RIGHT")
             }
           
       //Block jump when meet down horizontal wall
       //JUMP JUMP
-      if(player.posY<title.posY+title.size+3&&player.posY>title.posY+title.size/2){
-        player.posY=title.posY+title.size+1
-        title.color="black"
-      //  
-        player.stop=true
-        player.up=false
-        title.color="red"
-      }
+
+ if(player.detectBlokJump.canJump===false){
+ 
+  player.stopJump=true
+  player.posY=title.posY+title.size+1
+ }
 
           }
 

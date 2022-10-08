@@ -1,6 +1,7 @@
 
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 const path=require("path")
 
@@ -37,6 +38,7 @@ plugins:[
     chunks:['gameover'],
 
  }),
+ new FaviconsWebpackPlugin('./src/stylesImage/favicon.png')
 ],
 module: {
     rules: [
@@ -72,6 +74,16 @@ module: {
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         type: 'asset/resource',
+        use:[
+          {
+          loader:'file-loader',
+          options:{
+            name:'[name].[ext]',
+            outputPath:'fonts/'
+          }
+          }
+
+        ]
       },
 
  

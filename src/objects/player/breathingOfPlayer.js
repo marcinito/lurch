@@ -41,7 +41,7 @@ export const breathingOfPlayer=(player)=>{
             amountLifeImg.src=heartImg
         },3000)
         
-        if(player.quantityLive===0&&player.hp<0){
+        if(player.quantityLive===0||player.quantityLive<0){
             menu.playGame="game-over"
         }
         player.hp=player.hpTotal

@@ -17,13 +17,12 @@ NPC.forEach((npc,indexNpc,npcArr)=>{
 //No coliision
 
   }else{
-  if(dragon.directionMove!=="up"){
-    dragon.posY-=100
+ 
     dragon.directionMove=random(dragon.directionArr)
-    npc.hp-=dragon.attack.whenTouchPlayer
-    npc.percentageHp-=handleHp(dragon.attack.whenTouchPlayer,npc)
+    npc.hp-=dragon.attack.whenTouchNpc
+    npc.percentageHp-=handleHp(dragon.attack.whenTouchNpc,npc)
 
-  }
+  
   
   }
 

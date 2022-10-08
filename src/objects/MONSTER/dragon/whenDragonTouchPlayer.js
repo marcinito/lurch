@@ -13,16 +13,32 @@ export const whenDragonTouchPlayer=(player,dragonArray)=>{
 //No coliision
 
   }else{
-if(dragon.directionMove!=="up"){
+
  
 
   player.hp-=dragon.attack.whenTouchPlayer
   player.percentageHp-=handleHp(dragon.attack.whenTouchPlayer,player)
-}
+
   
   }
 
-
+//when dragon touch npc
+NPC.forEach((npc,i,arr)=>{
+  if(npc.posX+npc.size<dragon.posX || npc.posX>dragon.posX+dragon.size ||
+    npc.posY+npc.size<dragon.posY || npc.posY>dragon.posY+dragon.size){
+    
+  //No coliision
+  
+  }else{
+  
+  
+  
+  npc.hp-=dragon.attack.whenTouchPlayer
+  npc.percentageHp-=handleHp(dragon.attack.whenTouchPlayer,npc)
+  
+  
+  }
+})
   }
 )
 

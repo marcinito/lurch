@@ -15,6 +15,7 @@ import { menu, NPC, player } from "../../main"
 import { helperPlayer } from "../NPC/helperPlayer/helperPlayer"
 import { handleHp } from "../../Functions/shorthandFunction/handleHp"
 import sculeImg from '../../stylesImage/deadImg.png'
+import { detectBlokJump } from "../MONSTER/objects/detectBlokJump"
 const lifeSpan=document.querySelector(".lifeSpan")
 const playerImage=new Image(100,100)
 playerImage.src=playerImageFile
@@ -52,22 +53,24 @@ export class Player{
         //JUMP HANDLE
    this.powerJump=20//-strenght of jump how many player move to up when jump
    this.counterJump=0
-   this.stop=false//-is becoming active when player meet obstacle when jump its blok his jumping
+   this.stopJump=false//-is becoming active when player meet obstacle when jump its blok his jumping
     this.counterExtraJump=0 //-is serve as timer how many second player can jump higher than usually
     this.extraJump=false//it tell if player have acces to jump higher than usually
+    this.detectBlokJump=new detectBlokJump(true)
     
   
 
    //HP
-   this.hpTotal=20 //hp total tell what is maximum hp player
+   this.hpTotal=150 //hp total tell what is maximum hp player
    this.hp=this.hpTotal
    this.percentageHp=50// percentageHp tell how many percent hp player have
    this.ratePercentage=50// ratePercentage set value for "percent" in this case percent means 50
    this.whenPlayerLostLife="transparent"
    //quantity live
-   this.quantityLive=31
+   this.quantityLive=3
    //visual effect of treatment
    this.effect=0
+
 
      
      //backpack
@@ -77,8 +80,8 @@ export class Player{
       axe:{amount:0,itemInBp:false,ammo:"∞",bp:[],totalEndurance:0},
       glock:{amount:0,itemInBp:false,bp:[],ammo:0,flag:true},
       machineGun:{amount:0,itemInBp:false,bp:[],ammo:0,flag:true},
-      dynamite:{amount:1110,itemInBp:false,ammo:"",},
-      solidWall:{amount:324230,itemInBp:false,ammo:0,},
+      dynamite:{amount:0,itemInBp:false,ammo:"",},
+      solidWall:{amount:0,itemInBp:false,ammo:0,},
       plainWall:{amount:0,itemInBp:false,ammo:0,},
       brickWall:{amount:0,itemInBp:false,ammo:0,},
       magmaWall:{amount:0,itemInBp:false,ammo:0,},
@@ -134,7 +137,7 @@ this.effect++
   }
 
     }
-    //  can.ctx.strokeRect(this.posX,this.posY,this.size,this.size)
+     can.ctx.strokeRect(this.posX,this.posY,this.size,this.size)
      if(this.directionMove==="up" || this.directionMove==="down"){
       can.ctx.drawImage(this.image,0,0,250,230,this.posX,this.posY,this.size,this.size)
     
@@ -166,69 +169,78 @@ this.effect++
      }
     }
 
+    //detect blok jump
+    this.detectBlokJump.posX=this.posX
+    this.detectBlokJump.posY=this.posY-3
+    this.detectBlokJump.sizeX=this.size
+    this.detectBlokJump.sizeY=5
+ 
+
+        this.detectBlokJump.draw(can)
    
     }
     moveUp(){
-  this.stop=false
+  
+  this.stopJump=false
 
 
       if(this.up===true){
         this.posY-=this.powerJump
       setTimeout(()=>{
         
-         if(this.stop===false){
+         if(this.stopJump===false){
           this.posY-=this.powerJump
          }
         
         setTimeout(()=>{
         
-          if(this.stop===false){
+          if(this.stopJump===false){
             this.posY-=this.powerJump
            }
           
           setTimeout(()=>{
            
-            if(this.stop===false){
+            if(this.stopJump===false){
               this.posY-=this.powerJump
               console.log("dziala")
              }
             
             setTimeout(()=>{
              
-              if(this.stop===false){
+              if(this.stopJump===false){
                 this.posY-=this.powerJump
                }
                 
               
               setTimeout(()=>{
               
-                if(this.stop===false){
+                if(this.stopJump===false){
                   this.posY-=this.powerJump
                  }
                  if(this.extraJump===true){
                   setTimeout(()=>{
-                    if(this.stop===false){
+                    if(this.stopJump===false){
                       this.posY-=this.powerJump
                      }
                      if(this.extraJump===true){
                       setTimeout(()=>{
-                        if(this.stop===false){
+                        if(this.stopJump===false){
                         
                           this.posY-=this.powerJump
                          }
                          if(this.extraJump===true){
                           setTimeout(()=>{
-                            if(this.stop===false){
+                            if(this.stopJump===false){
                               this.posY-=this.powerJump
                              }
                              if(this.extraJump===true){
                               setTimeout(()=>{
-                                if(this.stop===false){
+                                if(this.stopJump===false){
                                   this.posY-=this.powerJump
                                  }
                                  if(this.extraJump===true){
                                   setTimeout(()=>{
-                                    if(this.stop===false){
+                                    if(this.stopJump===false){
                                       this.posY-=this.powerJump
                                     
                                      }
@@ -324,7 +336,7 @@ if(this.whatIsInHand==="glock"){
  
   if(this.backpack.glock.ammo>0&&this.backpack.glock.flag===true){
     
-    this.bulletGlockArray.push(new Glock(this.posX,this.posY,this.directionMove))
+    this.bulletGlockArray.push(new Glock(this.posX,this.posY,this.directionMove,this.size))
     this.backpack.glock.bp[0].ammo-=1
     this.backpack.glock.flag=false
     setTimeout(()=>{
@@ -344,7 +356,7 @@ if(this.whatIsInHand==="machineGun"){
  
   if(this.backpack.machineGun.ammo>0&&this.backpack.machineGun.flag===true){
     
-    this.bulletGlockArray.push(new Glock(this.posX,this.posY,this.directionMove))
+    this.bulletGlockArray.push(new Glock(this.posX,this.posY,this.directionMove,this.size))
     this.backpack.machineGun.bp[0].ammo-=1
     this.backpack.machineGun.flag=false
     setTimeout(()=>{
