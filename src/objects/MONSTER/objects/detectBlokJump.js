@@ -7,7 +7,7 @@ export class detectBlokJump{
         this.sizeX=20
         this.sizeY=1
         this.canJump=true
-        this.color="red"
+        this.color="transparent"
         this.timer=0
         this.onPlayer=onPlayer
         this.blok=false

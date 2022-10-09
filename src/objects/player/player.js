@@ -136,7 +136,7 @@ this.effect++
   }
 
     }
-     can.ctx.strokeRect(this.posX,this.posY,this.size,this.size)
+    //  can.ctx.strokeRect(this.posX,this.posY,this.size,this.size)
      if(this.directionMove==="up" || this.directionMove==="down"){
       can.ctx.drawImage(this.image,0,0,250,230,this.posX,this.posY,this.size,this.size)
     
