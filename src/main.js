@@ -80,7 +80,7 @@ const body=document.querySelector("body")
 
 
 
-
+const gameClick=document.querySelector(".gameClick")
 
 //It need be develop in order to handle primary menu button start game etc...
 handleButton(menu)
