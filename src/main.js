@@ -302,7 +302,7 @@ effectWhenPlayerPassedLevel(transitionArray,can)
    }
 
    if(menu.playGame==="game-over"){
-    window.location="/gameover.html"
+    window.location.href="/gameover.html"
     
    }
 
