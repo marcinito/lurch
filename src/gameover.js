@@ -1,3 +1,4 @@
+
 import styles from './gameover.scss'
 const end=[...document.querySelectorAll(".tile")]
 const container=document.querySelector(".container")
