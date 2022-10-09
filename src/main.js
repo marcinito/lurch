@@ -366,7 +366,7 @@ effectWhenPlayerPassedLevel(transitionArray,can)
  
     setTimeout(()=>{
         window.location.reload()
-    },4334000)
+    },6000)
     
    }
 
