@@ -31,6 +31,7 @@ makeWall(solidWall,30,0,can.C_H-260,65,"red","horizontal"),
 makeWall(magmaWall,30,0,can.C_H-65,65,"red","horizontal"),
 makeWall(magmaWall,30,0,can.C_H-130,65,"red","horizontal"),
 makeWall(magmaWall,30,0,can.C_H-195,65,"red","horizontal"),
+player.blockToBuild
 
     ]
     return array

@@ -48,6 +48,7 @@ makeWall(magmaWall,1,65,135,65,"red","horizontal"),
 makeWall(magmaWall,1,65,70,65,"red","horizontal"),
 makeWall(magmaWall,1,65,5,65,"red","horizontal"),
 
+player.blockToBuild
 
 
     ]

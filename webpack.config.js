@@ -9,7 +9,7 @@ module.exports={
     mode:"development",
 entry:{
     main:'./src/main.js',
-    gameover:'./src/gameover.js',  
+   
       
     
 
@@ -30,13 +30,7 @@ plugins:[
 
     }),
 
-   new HtmlWebpackPlugin({
-    template:'./src/gameover.html',
-    filename:"gameover.html",
-    inject:"body",
-    chunks:['gameover'],
 
- }),
  new FaviconsWebpackPlugin('./src/stylesImage/favicon.png')
 ],
 module: {

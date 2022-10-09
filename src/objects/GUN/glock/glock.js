@@ -12,7 +12,7 @@ export class Glock{
         this.strenghtAttack=29.7
         this.directionAttack=directionAttack
         this.image=glockBulletImage
-        this.speed=3
+        this.speed=5
     }
     draw(can){
        

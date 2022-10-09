@@ -76,18 +76,24 @@ import { freeModeArrangementWall } from './LEVEL/FREEMODE/freeModeArrangementWal
 import { monsterOnFreeMode } from './LEVEL/FREEMODE/monsterOnFreeMode'
 import { itemsInFreeMode } from './LEVEL/FREEMODE/itemsInFreeMode'
 
-const body=document.querySelector("body")
 
 
 
-const gameClick=document.querySelector(".gameClick")
 
-//It need be develop in order to handle primary menu button start game etc...
+
+const letter=[...document.querySelectorAll(".letter")]
+let text="PlaYaGaiN"
+let gauge=0
+
 handleButton(menu)
 
 greetings()
 export let can=canvasSettingsGame()
+//GAME OVER EFFECT
 
+const pause=document.querySelector(".pause")
+const menuEq=document.querySelector(".menuEq")
+const gameOvers=document.querySelector(".gameOver")
 
 
 
@@ -105,13 +111,13 @@ export let changeLevel=()=>{
                 MONSTER=monsterInSecondLevel()
                 itemsOnMap=itemsOnSecondLvl()
                 cleanMap(player)
-                console.log("ile razy sie wykonuje")
+             
                 player.hpTotal+=amountAddedLifeAfterLevelAdvance
                 player.quantityLive+=1
             }
             if(menu.level===3){
               
-                console.log("3level")
+             
                         WALL=thirdLevelArrangement(player,can)
                         MONSTER=monsterOnThirdLevel()
                         itemsOnMap=itemsOnThirdLevel()
@@ -122,7 +128,7 @@ export let changeLevel=()=>{
                     }
                     
                     if(menu.level===4){
-                        console.log("4level")
+                  
                         WALL=fourLevelArrangementWall(player,can)
                         MONSTER=monsterOnFourLevel()
                         itemsOnMap=itemsOnFourLevel()
@@ -152,10 +158,31 @@ export let changeLevel=()=>{
 
 
 export let NPC=[]
+// export let WALL=firstLevelArrangementWall(player,can)
+// export let MONSTER=monsterOnFirstLevel()
+// export let itemsOnMap=itemsOnFirstLevel()
+//
+// export let WALL=secondLevelArrangementWall(player,can)
+// export let MONSTER=monsterInSecondLevel()
+// export let itemsOnMap=itemsOnSecondLvl()
+
+// export let WALL=thirdLevelArrangement(player,can)
+// export let MONSTER=monsterOnThirdLevel()
+// export let itemsOnMap=itemsOnThirdLevel()
+
+// export let WALL=fourLevelArrangementWall(player,can)
+// export let MONSTER=monsterOnFourLevel()
+// export let itemsOnMap=itemsOnFourLevel()
+
+
+
+// export let WALL=lastLevelArrangementWall(player,can)
+// export let MONSTER=monsterOnLastLevel()
+// export let itemsOnMap=itemsOnLastLevel()
+
 export let WALL=firstLevelArrangementWall(player,can)
 export let MONSTER=monsterOnFirstLevel()
 export let itemsOnMap=itemsOnFirstLevel()
-
 movementPlayer(player,itemsOnMap)
 
 
@@ -302,7 +329,44 @@ effectWhenPlayerPassedLevel(transitionArray,can)
    }
 
    if(menu.playGame==="game-over"){
-    window.location.href="/gameover.html"
+    
+    gauge++
+    if(gauge>200){
+        letter[0].textContent="p"
+    }
+    if(gauge>240){
+        letter[1].textContent="L"
+    }
+    if(gauge>280){
+        letter[2].textContent="a"
+    }
+    if(gauge>320){
+        letter[3].textContent="Y"
+    }
+    if(gauge>360){
+        letter[4].textContent="a"
+    }
+    if(gauge>400){
+        letter[5].textContent="G"
+    }
+    if(gauge>440){
+        letter[6].textContent="a"
+    }
+    if(gauge>480){
+        letter[7].textContent="I"
+    }
+    if(gauge>520){
+        letter[8].textContent="n"
+    }
+  
+    pause.style.opacity=0
+    menuEq.style.opacity=0
+    gameOvers.style.display="block"
+
+ 
+    setTimeout(()=>{
+        window.location.reload()
+    },4334000)
     
    }
 
