@@ -23,7 +23,7 @@ WALL.forEach((pAW,pAI,wallArray)=>{
             
       //When player touch horizontal element on top
    
-            if(player.posY+player.size>title.posY-1 && title.posY>player.posY&&player.posY+player.size<title.posY+3){
+            if(player.posY+player.size>title.posY-1 && title.posY>player.posY&&player.posY+player.size<title.posY+title.size/6){
               //Gravity dont work when player stand on block
    
             let deepCollision=player.posY+player.size-title.posY
@@ -56,9 +56,11 @@ WALL.forEach((pAW,pAI,wallArray)=>{
       //JUMP JUMP
 
  if(player.detectBlokJump.canJump===false){
+
  
-  player.stopJump=true
   player.posY=title.posY+title.size+1
+  player.stopJump=true
+  // player.posY=title.posY+title.size 
  }
 
           }

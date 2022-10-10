@@ -39,7 +39,7 @@ export const movementPlayer=(player,itemsOnMap)=>{
     window.addEventListener("keydown",(e)=>{
        
 
-        if(e.keyCode===37&&player.detectBlokJump.blok===false){
+        if(e.keyCode===37){
                player.doPlayerRun++
            
                
@@ -47,7 +47,7 @@ export const movementPlayer=(player,itemsOnMap)=>{
              
                 
         }
-        if(e.keyCode===39&&player.detectBlokJump.blok===false){
+        if(e.keyCode===39){
             player.doPlayerRun++
            
                 player.moveRight()
@@ -207,7 +207,7 @@ displayItemInDetail(allSlot,player)
                     }
                     if(player.whatIsInHand==="brickWall"&&player.backpack.brickWall.amount>0){
                         player.blockToBuild.push(new brickWall(point.x-sizeTitle/2,point.y-sizeTitle/2,65,"red","horizontal"))
-                        player.backpack.magmaWall.amount-=1
+                        player.backpack.brickWall.amount-=1
                         updateEqDashboard("brickWall",player.backpack)
                         }
      }

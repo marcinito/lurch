@@ -51,7 +51,7 @@ export class Player{
         this.right=true
  
         //JUMP HANDLE
-   this.powerJump=20//-strenght of jump how many player move to up when jump
+   this.powerJump=4//-strenght of jump how many player move to up when jump
    this.counterJump=0
    this.stopJump=false//-is becoming active when player meet obstacle when jump its blok his jumping
     this.counterExtraJump=0 //-is serve as timer how many second player can jump higher than usually
@@ -138,14 +138,14 @@ this.effect++
     }
     //  can.ctx.strokeRect(this.posX,this.posY,this.size,this.size)
      if(this.directionMove==="up" || this.directionMove==="down"){
-      can.ctx.drawImage(this.image,0,0,250,230,this.posX,this.posY,this.size,this.size)
+      can.ctx.drawImage(this.image,0,36,250,190,this.posX,this.posY,this.size,this.size)
     
       
 
      }
      if(this.directionMove==="left"&&this.deadEffect===false){
    
-      can.ctx.drawImage(this.image,this.animation,500,250,220,this.posX,this.posY,this.size,this.size)
+      can.ctx.drawImage(this.image,this.animation,545,250,175,this.posX,this.posY,this.size,this.size)
     
       if(this.animation>=1000){
         this.animation=0
@@ -153,7 +153,7 @@ this.effect++
      }
      if(this.directionMove==="right"&&this.deadEffect===false){
    
-     can.ctx.drawImage(this.image,this.animation,750,250,220,this.posX,this.posY,this.size,this.size)
+     can.ctx.drawImage(this.image,this.animation,788,250,183,this.posX,this.posY,this.size,this.size)
     
      if(this.animation>=1000){
        this.animation=0
@@ -182,83 +182,235 @@ this.effect++
   
   this.stopJump=false
 
+let timer=1
+
 
       if(this.up===true){
         this.posY-=this.powerJump
       setTimeout(()=>{
-        
-         if(this.stopJump===false){
+        if(this.stopJump===false){
           this.posY-=this.powerJump
-         }
-        
+        }
         setTimeout(()=>{
-        
           if(this.stopJump===false){
             this.posY-=this.powerJump
-           }
-          
+          }
           setTimeout(()=>{
-           
             if(this.stopJump===false){
               this.posY-=this.powerJump
-              console.log("dziala")
-             }
-            
+            }
             setTimeout(()=>{
-             
               if(this.stopJump===false){
                 this.posY-=this.powerJump
-               }
-                
-              
+              }
               setTimeout(()=>{
-              
                 if(this.stopJump===false){
                   this.posY-=this.powerJump
-                 }
-                 if(this.extraJump===true){
+                }
+                setTimeout(()=>{
+                  if(this.stopJump===false){
+                    this.posY-=this.powerJump
+                  }
                   setTimeout(()=>{
                     if(this.stopJump===false){
                       this.posY-=this.powerJump
-                     }
-                     if(this.extraJump===true){
+                    }
+                    setTimeout(()=>{
+                      if(this.stopJump===false){
+                        this.posY-=this.powerJump
+                      }
                       setTimeout(()=>{
                         if(this.stopJump===false){
-                        
                           this.posY-=this.powerJump
-                         }
-                         if(this.extraJump===true){
+                        }
+                        setTimeout(()=>{
+                          if(this.stopJump===false){
+                            this.posY-=this.powerJump
+                          }
                           setTimeout(()=>{
                             if(this.stopJump===false){
                               this.posY-=this.powerJump
-                             }
-                             if(this.extraJump===true){
+                            }
+                            setTimeout(()=>{
+                              if(this.stopJump===false){
+                                this.posY-=this.powerJump
+                              }
                               setTimeout(()=>{
                                 if(this.stopJump===false){
                                   this.posY-=this.powerJump
-                                 }
-                                 if(this.extraJump===true){
+                                }
+                                setTimeout(()=>{
+                                  if(this.stopJump===false){
+                                    this.posY-=this.powerJump
+                                  }
                                   setTimeout(()=>{
                                     if(this.stopJump===false){
                                       this.posY-=this.powerJump
-                                    
-                                     }
-                                  },20)
-                                 }
-                              },20)
-                             }
-                          },20)
-                         }
-                      },20)
-                     }
-                  },20)
-                 }
-                
-              },20)
-            },20)
-          },20)
-        },20)
-      },20)
+                                    }
+                                    setTimeout(()=>{
+                                      if(this.stopJump===false){
+                                        this.posY-=this.powerJump
+                                      }  setTimeout(()=>{
+                                        if(this.stopJump===false){
+                                          this.posY-=this.powerJump
+                                        }  setTimeout(()=>{
+                                          if(this.stopJump===false){
+                                            this.posY-=this.powerJump
+                                          }  setTimeout(()=>{
+                                            if(this.stopJump===false){
+                                              this.posY-=this.powerJump
+                                            }  setTimeout(()=>{
+                                              if(this.stopJump===false){
+                                                this.posY-=this.powerJump
+                                              }  setTimeout(()=>{
+                                                if(this.stopJump===false){
+                                                  this.posY-=this.powerJump
+                                                }  setTimeout(()=>{
+                                                  if(this.stopJump===false){
+                                                    this.posY-=this.powerJump
+                                                  }  setTimeout(()=>{
+                                                    if(this.stopJump===false){
+                                                      this.posY-=this.powerJump
+                                                    }  setTimeout(()=>{
+                                                      if(this.stopJump===false){
+                                                        this.posY-=this.powerJump
+                                                      }  setTimeout(()=>{
+                                                        if(this.stopJump===false){
+                                                          this.posY-=this.powerJump
+                                                        }  setTimeout(()=>{
+                                                          if(this.stopJump===false){
+                                                            this.posY-=this.powerJump
+                                                          }  setTimeout(()=>{
+                                                            if(this.stopJump===false){
+                                                              this.posY-=this.powerJump
+                                                            }
+                                                            setTimeout(()=>{
+                                                              if(this.counterExtraJump>0&&this.stopJump===false){
+                                                                this.posY-=this.powerJump
+                                                              }
+                                                              setTimeout(()=>{
+                                                                if(this.counterExtraJump>0&&this.stopJump===false){
+                                                                  this.posY-=this.powerJump
+                                                                }
+                                                                setTimeout(()=>{
+                                                                  if(this.counterExtraJump>0&&this.stopJump===false){
+                                                                    this.posY-=this.powerJump
+                                                                  }
+                                                                  setTimeout(()=>{
+                                                                    if(this.counterExtraJump>0&&this.stopJump===false){
+                                                                      this.posY-=this.powerJump
+                                                                    }
+                                                                    setTimeout(()=>{
+                                                                      if(this.counterExtraJump>0&&this.stopJump===false){
+                                                                        this.posY-=this.powerJump
+                                                                      }
+                                                                      setTimeout(()=>{
+                                                                        if(this.counterExtraJump>0&&this.stopJump===false){
+                                                                          this.posY-=this.powerJump
+                                                                        }
+                                                                        setTimeout(()=>{
+                                                                          if(this.counterExtraJump>0&&this.stopJump===false){
+                                                                            this.posY-=this.powerJump
+                                                                          }
+                                                                          setTimeout(()=>{
+                                                                            if(this.counterExtraJump>0&&this.stopJump===false){
+                                                                              this.posY-=this.powerJump
+                                                                            }
+                                                                            setTimeout(()=>{
+                                                                              if(this.counterExtraJump>0&&this.stopJump===false){
+                                                                                this.posY-=this.powerJump
+                                                                              }   setTimeout(()=>{
+                                                                                if(this.counterExtraJump>0&&this.stopJump===false){
+                                                                                  this.posY-=this.powerJump
+                                                                                }
+                                                                                setTimeout(()=>{
+                                                                                  if(this.counterExtraJump>0&&this.stopJump===false){
+                                                                                    this.posY-=this.powerJump
+                                                                                  }
+                                                                                  setTimeout(()=>{
+                                                                                    if(this.counterExtraJump>0&&this.stopJump===false){
+                                                                                      this.posY-=this.powerJump
+                                                                                    }   setTimeout(()=>{
+                                                                                      if(this.counterExtraJump>0&&this.stopJump===false){
+                                                                                        this.posY-=this.powerJump
+                                                                                      }
+                                                                                      setTimeout(()=>{
+                                                                                        if(this.counterExtraJump>0&&this.stopJump===false){
+                                                                                          this.posY-=this.powerJump
+                                                                                        }
+                                                                                        setTimeout(()=>{
+                                                                                          if(this.counterExtraJump>0&&this.stopJump===false){
+                                                                                            this.posY-=this.powerJump
+                                                                                          }
+                                                                                          setTimeout(()=>{
+                                                                                            if(this.counterExtraJump>0&&this.stopJump===false){
+                                                                                              this.posY-=this.powerJump
+                                                                                            }
+                                                                                            setTimeout(()=>{
+                                                                                              if(this.counterExtraJump>0&&this.stopJump===false){
+                                                                                                this.posY-=this.powerJump
+                                                                                              }
+                                                                                              setTimeout(()=>{
+                                                                                                if(this.counterExtraJump>0&&this.stopJump===false){
+                                                                                                  this.posY-=this.powerJump
+                                                                                                }
+                                                                                                setTimeout(()=>{
+                                                                                                  if(this.counterExtraJump>0&&this.stopJump===false){
+                                                                                                    this.posY-=this.powerJump
+                                                                                                  }
+                                                                                                  setTimeout(()=>{
+                                                                                                    if(this.counterExtraJump>0&&this.stopJump===false){
+                                                                                                      this.posY-=this.powerJump
+                                                                                                    }
+                                                                                                    
+                                                                                                  },timer)
+                                                                                                },timer)
+                                                                                              },timer)
+                                                                                            },timer)
+                                                                                          },timer)
+                                                                                        },timer)
+                                                                                      },timer)
+                                                                                    },timer)
+                                                                                  },timer)
+                                                                                },timer)
+                                                                              },timer)
+                                                                            },timer)
+                                                                          },timer)
+                                                                        },timer)
+                                                                      },timer)
+                                                                    },timer)
+                                                                  },timer)
+                                                                },timer)
+                                                              },timer)
+                                                            },timer)
+                                                            
+                                                          },timer)
+                                                        },timer)
+                                                      },timer)
+                                                    },timer)
+                                                  },timer)
+                                                },timer)
+                                              },timer)
+                                            },timer)
+                                          },timer)
+                                        },timer)
+                                      },timer)
+                                    },timer)
+                                  },timer)
+                                },timer)
+                              },timer)
+                            },timer)
+                          },timer)
+                        },timer)
+                      },timer)
+                    },timer)
+                  },timer)
+                },timer)
+              },timer)
+            },timer)
+          },timer)
+        },timer)
+      },timer)
       }
 
       this.right=true

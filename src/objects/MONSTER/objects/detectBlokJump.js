@@ -41,4 +41,16 @@ this.blok=false
          
 
     }
+    jumpJump(){
+        window.addEventListener("keyup",(e)=>{
+            if(e.keyCode===38){
+                for(let i=0;i<1;i++){
+                    if(this.canJump===true){
+                        player.posY-=1
+                    }
+                   
+                }
+            }
+        })
+    }
 }
