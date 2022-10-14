@@ -51,7 +51,7 @@ export class Player{
         this.right=true
  
         //JUMP HANDLE
-   this.powerJump=4//-strenght of jump how many player move to up when jump
+   this.powerJump=8//-strenght of jump how many player move to up when jump
    this.counterJump=0
    this.stopJump=false//-is becoming active when player meet obstacle when jump its blok his jumping
     this.counterExtraJump=0 //-is serve as timer how many second player can jump higher than usually
@@ -67,7 +67,7 @@ export class Player{
    this.ratePercentage=50// ratePercentage set value for "percent" in this case percent means 50
    this.whenPlayerLostLife="transparent"
    //quantity live
-   this.quantityLive=3
+   this.quantityLive=200
    //visual effect of treatment
    this.effect=0
 
@@ -78,10 +78,10 @@ export class Player{
      this.backpack={
       money:{amount:0,itemInBp:false},
       axe:{amount:0,itemInBp:false,ammo:"∞",bp:[],totalEndurance:0},
-      glock:{amount:0,itemInBp:false,bp:[],ammo:0,flag:true},
-      machineGun:{amount:0,itemInBp:false,bp:[],ammo:0,flag:true},
-      dynamite:{amount:0,itemInBp:false,ammo:"",},
-      solidWall:{amount:0,itemInBp:false,ammo:0,},
+      glock:{amount:0,itemInBp:false,bp:[],ammo:1110,flag:true},
+      machineGun:{amount:0,itemInBp:false,bp:[],ammo:11120,flag:true},
+      dynamite:{amount:110,itemInBp:false,ammo:"",},
+      solidWall:{amount:1120,itemInBp:false,ammo:0,},
       plainWall:{amount:0,itemInBp:false,ammo:0,},
       brickWall:{amount:0,itemInBp:false,ammo:0,},
       magmaWall:{amount:0,itemInBp:false,ammo:0,},
@@ -136,7 +136,7 @@ this.effect++
   }
 
     }
-    //  can.ctx.strokeRect(this.posX,this.posY,this.size,this.size)
+     can.ctx.strokeRect(this.posX,this.posY,this.size,this.size)
      if(this.directionMove==="up" || this.directionMove==="down"){
       can.ctx.drawImage(this.image,0,36,250,190,this.posX,this.posY,this.size,this.size)
     

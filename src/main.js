@@ -57,7 +57,7 @@ import { zombieAttackNpc } from './objects/NPC/zombieAttackNpc'
 import { soldierAttackNpc } from './objects/NPC/soldierAttackNpc'
 import { whenDragonTouchNpc } from './objects/NPC/whenDragonTouchNpc'
 import { cleanMap } from './LEVEL/CHANGE-LEVEl/cleanMap'
-import imagess from './stylesImage/chmura.png'
+
 import { monsterHitInWallToOften } from './objects/GUN/FUNCTION/monsterHitInWallToOften'
 import { background } from './LEVEL/BACKGROUND/background'
 import { thirdLevelArrangement } from './LEVEL/THIRD-LEVEL/thirdLevelArrangement'
@@ -65,7 +65,7 @@ import { fourLevelArrangementWall } from './LEVEL/FOUR-LEVEL/fourLevelArrangemen
 import { monsterOnThirdLevel } from './LEVEL/THIRD-LEVEL/monsterOnThirdLevel'
 import { itemsOnThirdLevel } from './LEVEL/THIRD-LEVEL/itemsOnThirdLevel'
 import { dragonFireBallAttack } from './objects/MONSTER/dragon/dragonFireBallAttack'
-import { changeWay } from './objects/MONSTER/FUNCTION/changeWay'
+
 import { monsterOnFourLevel } from './LEVEL/FOUR-LEVEL/monsterOnFourLevel'
 import { lastLevelArrangementWall } from './LEVEL/LASTLEVEL/lastLevelArrangementWall'
 import { monsterOnLastLevel } from './LEVEL/LASTLEVEL/monsterOnLastLevel'
@@ -75,15 +75,14 @@ import { itemsOnFourLevel } from './LEVEL/FOUR-LEVEL/itemsOnFourLevel'
 import { freeModeArrangementWall } from './LEVEL/FREEMODE/freeModeArrangementWall'
 import { monsterOnFreeMode } from './LEVEL/FREEMODE/monsterOnFreeMode'
 import { itemsInFreeMode } from './LEVEL/FREEMODE/itemsInFreeMode'
+import { gameOver } from './LEVEL/CHANGE-LEVEl/gameOver'
 
 
 
 
 
 
-const letter=[...document.querySelectorAll(".letter")]
-let text="PlaYaGaiN"
-let gauge=0
+
 
 handleButton(menu)
 
@@ -91,16 +90,11 @@ greetings()
 export let can=canvasSettingsGame()
 //GAME OVER EFFECT
 
-const pause=document.querySelector(".pause")
-const menuEq=document.querySelector(".menuEq")
-const gameOvers=document.querySelector(".gameOver")
 
 
-console.log(window.screen.width)
-console.log(window.innerWidth)
-if(window.innerWidth<950){
-console.log("mniejsze")
-}
+
+
+
 
 export let transitionArray=[]
 
@@ -108,7 +102,7 @@ export let changeLevel=()=>{
     //change level work in this way that when monster is killed function count all monster on map when
     //number is 0 its will change level
     let amountAddedLifeAfterLevelAdvance=30
-    console.log(menu.level)
+   
     if(menu.level===2){
      
                 WALL=secondLevelArrangementWall(player,can)
@@ -184,9 +178,14 @@ export let NPC=[]
 // export let MONSTER=monsterOnLastLevel()
 // export let itemsOnMap=itemsOnLastLevel()
 
-export let WALL=firstLevelArrangementWall(player,can)
+
+    export let WALL=firstLevelArrangementWall(player,can)
 export let MONSTER=monsterOnFirstLevel()
 export let itemsOnMap=itemsOnFirstLevel()
+
+if(menu.tutorial===true){
+    
+}
 movementPlayer(player,itemsOnMap)
 
 
@@ -207,7 +206,6 @@ const backgroundImg=new background()
 
 breathingOfPlayer(player)
 playerTakeItemFromMap(player,itemsOnMap)
-// AmmoVsWall(player,WALL,can)
 PLAYERGRAVITY(player,WALL,can)
 
 
@@ -334,44 +332,7 @@ effectWhenPlayerPassedLevel(transitionArray,can)
 
    if(menu.playGame==="game-over"){
     
-    gauge++
-    if(gauge>200){
-        letter[0].textContent="p"
-    }
-    if(gauge>240){
-        letter[1].textContent="L"
-    }
-    if(gauge>280){
-        letter[2].textContent="a"
-    }
-    if(gauge>320){
-        letter[3].textContent="Y"
-    }
-    if(gauge>360){
-        letter[4].textContent="a"
-    }
-    if(gauge>400){
-        letter[5].textContent="G"
-    }
-    if(gauge>440){
-        letter[6].textContent="a"
-    }
-    if(gauge>480){
-        letter[7].textContent="I"
-    }
-    if(gauge>520){
-        letter[8].textContent="n"
-    }
-  
-    pause.style.opacity=0
-    menuEq.style.opacity=0
-    gameOvers.style.display="block"
-
- 
-    setTimeout(()=>{
-        window.location.reload()
-    },9000)
-    
+gameOver()
    }
 
     requestAnimationFrame(runApp)

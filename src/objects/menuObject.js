@@ -6,9 +6,10 @@ export class menuObject{
     constructor(){
         this.playGame="menu"
         this.click=0
-        this.level=2
+        this.level=1
         this.numberOfMonster=0
         this.navigation="home"
+        this.tutorial=false
     }
     
 }

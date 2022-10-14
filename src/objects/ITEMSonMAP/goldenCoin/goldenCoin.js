@@ -15,7 +15,7 @@ export class goldenCoin{
 
         this.posX=posX+10
         this.posY=posY+10
-        this.size=size-20
+        this.size=size
         this.image=coin
         this.layOnMap=true
         this.name="goldenCoin"

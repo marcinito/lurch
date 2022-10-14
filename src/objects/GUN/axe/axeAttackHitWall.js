@@ -36,7 +36,8 @@ export const axeAttackHitWall=(player,WALL,can)=>{
         
         }
         if(title.name==="goldWall"){
-                itemsOnMap.push(new goldenCoin(title.posX,title.posY,title.size))
+              
+                itemsOnMap.push(new goldenCoin(title.posX,title.posY,65))
         }
         if(title.name==="brickWall"){
                 itemsOnMap.push(new brickWallItems(title.posX,title.posY,title.size))
