@@ -96,7 +96,11 @@ const menuEq=document.querySelector(".menuEq")
 const gameOvers=document.querySelector(".gameOver")
 
 
-
+console.log(window.screen.width)
+console.log(window.innerWidth)
+if(window.innerWidth<950){
+console.log("mniejsze")
+}
 
 export let transitionArray=[]
 
