@@ -78,10 +78,10 @@ export class Player{
      this.backpack={
       money:{amount:0,itemInBp:false},
       axe:{amount:0,itemInBp:false,ammo:"∞",bp:[],totalEndurance:0},
-      glock:{amount:0,itemInBp:false,bp:[],ammo:1110,flag:true},
+      glock:{amount:0,itemInBp:false,bp:[],ammo:0,flag:true},
       machineGun:{amount:0,itemInBp:false,bp:[],ammo:11120,flag:true},
       dynamite:{amount:110,itemInBp:false,ammo:"",},
-      solidWall:{amount:1120,itemInBp:false,ammo:0,},
+      solidWall:{amount:0,itemInBp:false,ammo:0,},
       plainWall:{amount:0,itemInBp:false,ammo:0,},
       brickWall:{amount:0,itemInBp:false,ammo:0,},
       magmaWall:{amount:0,itemInBp:false,ammo:0,},
@@ -484,7 +484,7 @@ if(this.whatIsInHand==="axe"){
   }
 }
 if(this.whatIsInHand==="glock"){
- 
+
   if(this.backpack.glock.ammo>0&&this.backpack.glock.flag===true){
     
     this.bulletGlockArray.push(new Glock(this.posX,this.posY,this.directionMove,this.size))

@@ -76,6 +76,10 @@ import { freeModeArrangementWall } from './LEVEL/FREEMODE/freeModeArrangementWal
 import { monsterOnFreeMode } from './LEVEL/FREEMODE/monsterOnFreeMode'
 import { itemsInFreeMode } from './LEVEL/FREEMODE/itemsInFreeMode'
 import { gameOver } from './LEVEL/CHANGE-LEVEl/gameOver'
+import { tutorialArrangementWall } from './LEVEL/TUTORIAL/tutorialArrangementWall'
+import { itemsOnTutorial } from './LEVEL/TUTORIAL/itemsOntutorial'
+import { monsterOnTutorial } from './LEVEL/TUTORIAL/monsterOnTutorial'
+import { tutorialObject } from './LEVEL/TUTORIAL/tutorialObject'
 
 
 
@@ -94,15 +98,27 @@ export let can=canvasSettingsGame()
 
 
 
-
+let tutorial= new tutorialObject()
 
 export let transitionArray=[]
+export const turnTutorial=()=>{
 
+    WALL=tutorialArrangementWall(player,can)
+    itemsOnMap=itemsOnTutorial()
+    MONSTER=monsterOnTutorial()
+}
 export let changeLevel=()=>{
     //change level work in this way that when monster is killed function count all monster on map when
     //number is 0 its will change level
     let amountAddedLifeAfterLevelAdvance=30
-   
+   if(menu.level===1){
+    WALL=firstLevelArrangementWall(player,can)
+    MONSTER=monsterOnFirstLevel()
+    itemsOnMap=itemsOnFirstLevel()
+    cleanMap(player)
+   }
+
+
     if(menu.level===2){
      
                 WALL=secondLevelArrangementWall(player,can)
@@ -156,36 +172,14 @@ export let changeLevel=()=>{
 
 
 export let NPC=[]
-// export let WALL=firstLevelArrangementWall(player,can)
-// export let MONSTER=monsterOnFirstLevel()
-// export let itemsOnMap=itemsOnFirstLevel()
-//
-// export let WALL=secondLevelArrangementWall(player,can)
-// export let MONSTER=monsterInSecondLevel()
-// export let itemsOnMap=itemsOnSecondLvl()
 
-// export let WALL=thirdLevelArrangement(player,can)
-// export let MONSTER=monsterOnThirdLevel()
-// export let itemsOnMap=itemsOnThirdLevel()
-
-// export let WALL=fourLevelArrangementWall(player,can)
-// export let MONSTER=monsterOnFourLevel()
-// export let itemsOnMap=itemsOnFourLevel()
-
-
-
-// export let WALL=lastLevelArrangementWall(player,can)
-// export let MONSTER=monsterOnLastLevel()
-// export let itemsOnMap=itemsOnLastLevel()
 
 
     export let WALL=firstLevelArrangementWall(player,can)
 export let MONSTER=monsterOnFirstLevel()
 export let itemsOnMap=itemsOnFirstLevel()
 
-if(menu.tutorial===true){
-    
-}
+
 movementPlayer(player,itemsOnMap)
 
 
@@ -196,8 +190,10 @@ const backgroundImg=new background()
   
 
    if(menu.playGame==="game"){
-   
+
     can.ctx.clearRect(0,0,can.C_W,can.C_H)
+
+ 
     backgroundImg.makebackground(can)
   
 
@@ -328,6 +324,10 @@ mouseDetectorMonster.draw(can)
 player.draw(can)
 //effect when player passed level
 effectWhenPlayerPassedLevel(transitionArray,can)
+if(menu.tutorial===true){
+    tutorial.draw(can,player)
+    tutorial.handleTutorial(player)
+   }
    }
 
    if(menu.playGame==="game-over"){

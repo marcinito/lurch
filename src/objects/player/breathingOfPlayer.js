@@ -1,4 +1,4 @@
-import { menu, player } from "../../main"
+import { menu, player} from "../../main"
 import deadImg from '../../stylesImage/deadImg.png'
 const clack=document.querySelector(".clack")
 const timer=document.querySelector('.timer')

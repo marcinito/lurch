@@ -223,7 +223,7 @@ displayItemInDetail(allSlot,player)
         ey=e.y
 
         point=setPositionTileOnMap(ex,ey)
-        
+        // console.log(point)
         mouseDetectorMonster.posX=point.x-mouseDetectorMonster.size/2
         mouseDetectorMonster.posY=point.y-mouseDetectorMonster.size/2
         canIPutBlockInThisPlace(mouseDetectorMonster)

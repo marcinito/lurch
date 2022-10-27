@@ -10,6 +10,7 @@ export class menuObject{
         this.numberOfMonster=0
         this.navigation="home"
         this.tutorial=false
+        this.afterTutorial=false
     }
     
 }
