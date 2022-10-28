@@ -33,9 +33,9 @@ let stageArray=[
 {text1:`Drink fluid by click "space" on your keyboard.`,text2:` and click ↑ on your keyboard and check how hight you can jump`,xText:20,yText:200,xImage:150,yImage:361,color:"red",img:transparent,fontSize:38},
 {text1:`This watch show you how much`,text2:`time you do have extra jump`,xText:600,yText:650,xImage:1370,yImage:810,color:"black",img:arrowLeft,fontSize:42},
 {text1:`Here you have amount of your life`,xText:540,yText:780,xImage:1240,yImage:810,color:"black",img:arrowLeft,fontSize:42},
-{text1:`Take glock from map take it to hand in way you which learnt`,text2:`Fire in all direction by 
+{text1:`Take glock from map and next take it to hand in way you have learnt`,text2:`Fire in all direction by 
 using ↑  ←  →  ↓ `,xText:20,yText:150,xImage:245,yImage:360,color:"black",img:arrowDown,fontSize:35},
-{text1:`Fire!`,xText:400,yText:150,xImage:245,yImage:360,color:"brown",img:transparent,fontSize:75},
+{text1:`Fire, fire, fire!`,xText:400,yText:150,xImage:245,yImage:360,color:"brown",img:transparent,fontSize:75},
 {text1:`Congratulation you know basic skills`,xText:200,yText:120,xImage:150,yImage:361,color:"darkorange",img:transparent,fontSize:62},
 {text1:`More you will learn during the game`,xText:200,yText:120,xImage:150,yImage:361,color:"darkorange",img:transparent,fontSize:62},
 ]
@@ -86,7 +86,7 @@ can.ctx.drawImage(stageArray[this.stage].img,stageArray[this.stage].xImage,stage
        if(player.backpack.axe.amount>0&&this.stage===0){
         this.stage=1
 
-        //state where arro need point
+        //state where arrow need point
 for(let i=0;i<allSlot.length;i++){
     
     if(allSlot[i].dataset.empty==="true"){
@@ -132,23 +132,30 @@ for(let i=0;i<allSlot.length;i++){
     }}
 
 //STAGE 4
-if(this.stage===3&&this.blok.blok3===false)
+
     if(player.whatIsInHand==="brickWall"||player.whatIsInHand==="solidWall"){
-        this.blok.blok3=true
+       if(this.stage===3){
         this.stage=4
+       }
+        
+      if(this.stage===4){
         stageArray[this.stage].xImage=point.x-170
         stageArray[this.stage].yImage=point.y-50
+      }     
+      
         //STAGE 5
         window.addEventListener("click",()=>{
-            this.stage=5
-           
+            if(this.blok.blok3===false){
+                this.stage=5
+            }
+            this.blok.blok3=true
             setTimeout(()=>{
                 //STAGE 6
                 while(itemsOnMap.length<1) itemsOnMap.push( new jumpFluidItems(200,400,true,"none"))
                 this.stage=6
             },2000)
         },{once:true})
-     
+    
        
     }
 

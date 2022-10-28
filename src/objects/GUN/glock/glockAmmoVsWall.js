@@ -39,9 +39,9 @@ export const glockAmmoVsWall=(player,WALL,can)=>{
                         
                 }
                 if(title.name==="goldWall"){
-                        if(Math.floor(Math.random()*2)===1){
-                                itemsOnMap.push(new goldenCoin(title.posX,title.posY,title.size))
-                        }
+                     
+                                itemsOnMap.push(new goldenCoin(title.posX,title.posY,40))
+                        
                       
                     
                 }

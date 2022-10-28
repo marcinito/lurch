@@ -14,7 +14,7 @@ export const monsterOnFirstLevel=()=>{
     createMonster(Sheep,1,[{x:1135,y:467}]),
     createMonster(Zombie,1,[{x:1215,y:467}]),
     createMonster(Zombie,1,[{x:1115,y:467}]),
-    createMonster(Zombie,1,[{x:1015,y:467}]),
+    createMonster(Zombie,1,[{x:1015,y:167}]),
  
    
 
