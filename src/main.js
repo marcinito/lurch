@@ -87,7 +87,7 @@ import { tutorialObject } from './LEVEL/TUTORIAL/tutorialObject'
 
 
 
-
+console.log(screen.height,"height")
 handleButton(menu)
 
 greetings()
