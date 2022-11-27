@@ -6,7 +6,7 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const path=require("path")
 
 module.exports={
-    mode:"production",
+    mode:"development",
 entry:{
     main:'./src/main.js',
    

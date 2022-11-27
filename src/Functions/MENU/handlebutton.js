@@ -23,6 +23,23 @@ const wantTutorial=document.querySelector(".wantTutorial")
 const yes=document.querySelector(".yes")
 const no=document.querySelector(".no")
 
+//phone handle
+const turnLeftOnPhone=document.querySelector(".left").addEventListener("touchstart",()=>{
+player.doPlayerRun++    
+player.moveLeft()
+})
+const turnRightOnPhone=document.querySelector(".right").addEventListener("touchstart",()=>{
+    player.doPlayerRun++    
+    player.moveRight()
+    })
+    const turnJumpOnPhone=document.querySelector(".jump").addEventListener("touchend",()=>{
+        player.moveUp()
+        player.counterJump++
+        })
+        const fire=document.querySelector(".fire").addEventListener("touchend",()=>{
+            player.fire()
+            })
+
 export const handleButton=(menu)=>{
 //tutorial
     startGame.addEventListener("click",()=>{
