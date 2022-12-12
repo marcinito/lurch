@@ -10,14 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One&family=Bahianita&family=Dancing+Script:wght@600&family=Fasthand&family=Inconsolata:wght@200;400&family=Inspiration&family=Rubik:wght@300&display=swap" rel="stylesheet">
     <title>LuRcH</title>
 <link rel="icon" href="assets/favicon.png"></head>
-<body>
+<body style="opacity:0">
     
        
     <canvas id="canvas"></canvas>
-  
+
     <div class="menuEq">
    
-        <div class="insideBp">
+        <div class="insideBp" >
             <div class="bpPlace" id="1"><img class="slotBp 1" data-empty="true" ></img><span class="numberSlot">1</span></div>
             <div class="bpPlace" id="2"><img class="slotBp 2" data-empty="true"></img><span class="numberSlot">2</span></div>
             <div class="bpPlace" id="3"><img class="slotBp 3" data-empty="true"></img><span class="numberSlot">3</span></div>
@@ -28,10 +28,11 @@
             <div class="bpPlace" id="8"><img class="slotBp 8" data-empty="true"></img><span class="numberSlot">8</span></div>
         </div>
         <div class="phone">
-            <button class="jump">jump</button>
-            <button class="left">left</button>
-            <button class="right">right</button>
-            <button class="fire">Fire</button>
+            <div class="jump"><span></span></div>
+            <div class="left"><span></span></div>
+            <div class="right"><span></span></div>
+            <div class="down"><span></span></div>
+            <div class="fire">f<span></span></div>
 
         </div>
         <div class="skills">
@@ -60,7 +61,7 @@
                 </div>
             </div>
       
-         <div class="lifeSpan"><div class="amountLife"></div><img class="amountLifeImg"></div>
+         
         
          
         </div>
@@ -69,10 +70,10 @@
        <div class="logoImg"></div>
       
     <div class="containerMenu">
-        <section class="interFace">
+        <section class="interFace" >
             <div class="announcement"></div>
             <div class="board">
-                <nav><div class="itemTab tab">items</div>
+                <nav ><div class="itemTab tab">items</div>
                     <div class="storyTab tab">story</div><div class="instr tab">instruction</div>
                 </nav>
                 <div class="logoGame"></div>
@@ -247,6 +248,7 @@
                 
             </div>
             <div class="wantTutorial">
+                <span class="sprites"></span>
                 <h2 class="h2">Do you want tutorial?</h2>
                 <button class="yes">Yes</button>
                 <button class="no">No</button>
@@ -265,6 +267,7 @@
  
 
     <button class="pause">PAUSE</button>
+    <div class="lifeSpan"><div class="amountLife"></div><img class="amountLifeImg"></div>
 <div class="gameOver">
   
    <div class="end">
@@ -282,6 +285,30 @@
  
     <div class="sprites"></div>
 
+</div>
+<div class="tutoriaL">
+    <div class="face"></div>
+    <div class="toolTip"><span class="toolTip-text"></span></span></div>
+    <div class="container">
+   
+        <div class="slot">
+            <div class="slotTutorial">1</div>
+            <div class="slotTutorial">2</div>
+            <div class="slotTutorial">3</div>
+            <div class="slotTutorial">4</div>
+            <div class="slotTutorial">5</div>
+            <div class="slotTutorial">6</div>
+            <div class="slotTutorial">7</div>
+            <div class="slotTutorial">8</div>
+        </div>
+        <div class="space">space</div>
+        <div class="arrow">
+            <div class="upArrow key">↑</div>
+            <div class="leftArrow key">←</div>
+            <div class="rightArrow key">→</div>
+            <div class="downArrow key">↓</div>
+        </div>
+    </div>
 </div>
 
     
